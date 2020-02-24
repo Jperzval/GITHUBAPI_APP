@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_sz8">8dp</dimen>
+    <dimen name="margin_sz16">16dp</dimen>
+    <dimen name="text_sz20">20sp</dimen>
+    <dimen name="text_sz24">24sp</dimen>
+    <dimen name="text_sz32">32sp</dimen>
+    <dimen name="height_sz0">0dp</dimen>
+    <dimen name="height_sz60">60dp</dimen>
+    <dimen name="padding_sz24">24dp</dimen>
+</resources>
