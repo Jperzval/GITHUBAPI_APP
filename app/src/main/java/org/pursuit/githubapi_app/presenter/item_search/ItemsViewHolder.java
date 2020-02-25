@@ -21,12 +21,12 @@ public class ItemsViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void onBind(final Items items) {
-        itemNameView.setText(items.getLoginName());
-        itemView.setOnClickListener(v -> {
-            Intent intent = new Intent(itemView.getContext(), RepoActivity.class);
-            intent.putExtra(ORG_NAME, items.getLoginName());
-            v.getContext().startActivity(intent);
-        });
+           itemNameView.setText(items.getLoginName());
+           itemView.setOnClickListener(v -> {
+               Intent intent = new Intent(itemView.getContext(), RepoActivity.class);
+               intent.putExtra(ORG_NAME, items.getLoginName());
+               v.getContext().startActivity(intent);
+           });
     }
 
 }

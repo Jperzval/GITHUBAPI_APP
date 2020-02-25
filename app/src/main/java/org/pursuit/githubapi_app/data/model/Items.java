@@ -11,6 +11,8 @@ public class Items {
     private String loginName;
     @SerializedName("repos_url")
     private String reposUrl;
+    @SerializedName("type")
+    private String type;
 
     //No setters needed b/c its included within the retrofit converter
     public String getLoginName() {
@@ -19,5 +21,9 @@ public class Items {
 
     public String getReposUrl() {
         return reposUrl;
+    }
+
+    public String getType() {
+        return type;
     }
 }
