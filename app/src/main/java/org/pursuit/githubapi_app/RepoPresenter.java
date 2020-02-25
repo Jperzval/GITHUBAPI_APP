@@ -29,9 +29,6 @@ public class RepoPresenter implements Contract.RepoPresenter {
                 .subscribe((List<Repos> response) -> {
                             List<Repos> list = new ArrayList<>(response);
                             DataSort.sortByStars(list);
-                            for (Repos r : list) {
-                                System.out.println(r);
-                            }
                             repoView.showRepos(list);
                         },
                         throwable -> repoView.showError());

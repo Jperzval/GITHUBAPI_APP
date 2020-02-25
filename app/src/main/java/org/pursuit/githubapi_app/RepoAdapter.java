@@ -31,11 +31,7 @@ public class RepoAdapter extends RecyclerView.Adapter<RepoViewHolder> {
 
     @Override
     public int getItemCount() {
-        return reposList.size();
-    }
-
-    public void setData(List<Repos> sortList){
-        this.reposList = sortList;
-        notifyDataSetChanged();
+        //Size limited to top 3
+        return 3;
     }
 }

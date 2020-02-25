@@ -11,9 +11,6 @@ import java.util.List;
 
 public class RepoActivity extends AppCompatActivity implements Contract.RepoView {
 
-    private List<Repos> reposList;
-    private RepoAdapter repoAdapter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +29,6 @@ public class RepoActivity extends AppCompatActivity implements Contract.RepoView
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(new RepoAdapter(repos));
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        repoAdapter.setData(repos);
     }
 
     @Override

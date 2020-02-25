@@ -2,6 +2,9 @@ package org.pursuit.githubapi_app;
 
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * Created to obtain repo information
+ */
 public class Repos {
 
     @SerializedName("name")
@@ -13,6 +16,7 @@ public class Repos {
     @SerializedName("stargazers_count")
     private int starCount;
 
+    //Constructor with parameters created for unit testing
     public Repos(String repoName, String htmlUrl, int starCount) {
         this.repoName = repoName;
         this.htmlUrl = htmlUrl;
@@ -31,7 +35,4 @@ public class Repos {
     public int getStarCount() {
         return starCount;
     }
-
-
-
 }

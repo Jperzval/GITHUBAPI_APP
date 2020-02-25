@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     @Override
     public boolean onQueryTextChange(String s) {
         String input = s.toLowerCase();
-        System.out.println(input);
         presenter.getItemCall(input);
         return false;
     }
