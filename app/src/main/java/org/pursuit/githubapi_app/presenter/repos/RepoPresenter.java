@@ -1,6 +1,12 @@
-package org.pursuit.githubapi_app;
+package org.pursuit.githubapi_app.presenter.repos;
 
 import android.annotation.SuppressLint;
+
+import org.pursuit.githubapi_app.common.GHRetrofit;
+import org.pursuit.githubapi_app.data.DataSort;
+import org.pursuit.githubapi_app.data.GithubApi;
+import org.pursuit.githubapi_app.data.model.Repos;
+import org.pursuit.githubapi_app.presenter.Contract;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,9 +35,6 @@ public class RepoPresenter implements Contract.RepoPresenter {
                 .subscribe((List<Repos> response) -> {
                             List<Repos> list = new ArrayList<>(response);
                             DataSort.sortByStars(list);
-                            for (Repos r : list) {
-                                System.out.println(r);
-                            }
                             repoView.showRepos(list);
                         },
                         throwable -> repoView.showError());

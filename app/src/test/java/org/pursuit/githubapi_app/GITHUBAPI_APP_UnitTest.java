@@ -4,6 +4,8 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.pursuit.githubapi_app.data.DataSort;
+import org.pursuit.githubapi_app.data.model.Repos;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,18 +1,16 @@
-package org.pursuit.githubapi_app;
+package org.pursuit.githubapi_app.data.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Item {
+/**
+ * Created to obtain item information
+ */
+public class Items {
 
     @SerializedName("login")
     private String loginName;
     @SerializedName("repos_url")
     private String reposUrl;
-
-    public Item(String loginName, String reposUrl) {
-        this.loginName = loginName;
-        this.reposUrl = reposUrl;
-    }
 
     //No setters needed b/c its included within the retrofit converter
     public String getLoginName() {

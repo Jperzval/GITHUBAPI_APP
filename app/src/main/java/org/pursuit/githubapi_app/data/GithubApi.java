@@ -1,4 +1,7 @@
-package org.pursuit.githubapi_app;
+package org.pursuit.githubapi_app.data;
+
+import org.pursuit.githubapi_app.data.model.ItemsResponse;
+import org.pursuit.githubapi_app.data.model.Repos;
 
 import java.util.List;
 
@@ -11,7 +14,7 @@ public interface GithubApi {
     //This does all the JSON parsing. It is the connecting piece to the API:
     //Using query for the name of the organization
     @GET("search/users")
-    Observable<ItemResponse> getItemResponse(@Query("q") String name);
+    Observable<ItemsResponse> getItemResponse(@Query("q") String name);
 
     //Using path for the name of the organization
     @GET("users/{name}/repos")

@@ -1,10 +1,13 @@
-package org.pursuit.githubapi_app;
+package org.pursuit.githubapi_app.presenter.repos;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import org.pursuit.githubapi_app.R;
+import org.pursuit.githubapi_app.data.model.Repos;
 
 import java.util.List;
 
@@ -31,11 +34,7 @@ public class RepoAdapter extends RecyclerView.Adapter<RepoViewHolder> {
 
     @Override
     public int getItemCount() {
-        return reposList.size();
-    }
-
-    public void setData(List<Repos> sortList){
-        this.reposList = sortList;
-        notifyDataSetChanged();
+        //Size limited to top 3
+        return 3;
     }
 }
