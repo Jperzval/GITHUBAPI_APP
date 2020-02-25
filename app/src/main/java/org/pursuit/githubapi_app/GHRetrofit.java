@@ -18,6 +18,7 @@ public class GHRetrofit {
 
     public static Retrofit getRetrofitInstance() {
         if (retrofitInstance == null) {
+            //Getting/creating an instance of base URL - Avoids creating multiple instances.
             retrofitInstance = new Retrofit.Builder()
                     .baseUrl(GBAPI_BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())

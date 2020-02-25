@@ -14,6 +14,7 @@ public class Item {
         this.reposUrl = reposUrl;
     }
 
+    //No setters needed b/c its included within the retrofit converter
     public String getLoginName() {
         return loginName;
     }

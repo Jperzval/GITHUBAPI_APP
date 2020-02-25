@@ -10,7 +10,7 @@ public interface Contract {
     }
 
     interface RepoView {
-        void showRepos(Repos repos);
+        void showRepos(List<Repos> repos);
         void showError();
     }
 
