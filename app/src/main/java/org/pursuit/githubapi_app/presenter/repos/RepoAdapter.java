@@ -34,7 +34,6 @@ public class RepoAdapter extends RecyclerView.Adapter<RepoViewHolder> {
 
     @Override
     public int getItemCount() {
-        //Size limited to top 3
-        return 3;
+        return Math.min(reposList.size(), 3);
     }
 }
