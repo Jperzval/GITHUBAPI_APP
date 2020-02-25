@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Created to sort data in descending order
+ * Created to sort list in descending order
  */
 public class DataSort {
 
