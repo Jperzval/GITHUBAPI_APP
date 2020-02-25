@@ -11,8 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".presenter.repos.RepoActivity"></activity>
-        <activity android:name=".presenter.item_search.SearchActivity">
+        <activity android:name=".presenter.repos.RepoActivity"
+            android:parentActivityName=".presenter.item_search.SearchActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".presenter.item_search.SearchActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
