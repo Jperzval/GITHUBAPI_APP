@@ -1,11 +1,14 @@
-package org.pursuit.githubapi_app;
+package org.pursuit.githubapi_app.presenter;
+
+import org.pursuit.githubapi_app.data.model.Items;
+import org.pursuit.githubapi_app.data.model.Repos;
 
 import java.util.List;
 
 public interface Contract {
 
-    interface SearchItemsView {
-        void showItems(List<Item> itemList);
+    interface ItemsView {
+        void showItems(List<Items> itemsList);
         void showError();
     }
 
@@ -14,7 +17,7 @@ public interface Contract {
         void showError();
     }
 
-    interface ItemPresenter {
+    interface ItemsPresenter {
         void getItemCall(String input);
     }
 

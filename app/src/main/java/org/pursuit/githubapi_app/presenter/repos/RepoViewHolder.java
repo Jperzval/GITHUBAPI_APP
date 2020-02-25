@@ -1,4 +1,4 @@
-package org.pursuit.githubapi_app;
+package org.pursuit.githubapi_app.presenter.repos;
 
 import android.net.Uri;
 import android.support.annotation.NonNull;
@@ -6,6 +6,9 @@ import android.support.customtabs.CustomTabsIntent;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
+
+import org.pursuit.githubapi_app.R;
+import org.pursuit.githubapi_app.data.model.Repos;
 
 public class RepoViewHolder extends RecyclerView.ViewHolder {
 

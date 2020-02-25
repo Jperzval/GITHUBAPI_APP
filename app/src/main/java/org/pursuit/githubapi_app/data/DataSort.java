@@ -1,4 +1,6 @@
-package org.pursuit.githubapi_app;
+package org.pursuit.githubapi_app.data;
+
+import org.pursuit.githubapi_app.data.model.Repos;
 
 import java.util.Collections;
 import java.util.List;

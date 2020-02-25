@@ -1,4 +1,4 @@
-package org.pursuit.githubapi_app;
+package org.pursuit.githubapi_app.common;
 
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;

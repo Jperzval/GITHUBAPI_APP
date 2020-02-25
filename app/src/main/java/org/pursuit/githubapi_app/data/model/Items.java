@@ -1,11 +1,11 @@
-package org.pursuit.githubapi_app;
+package org.pursuit.githubapi_app.data.model;
 
 import com.google.gson.annotations.SerializedName;
 
 /**
  * Created to obtain item information
  */
-public class Item {
+public class Items {
 
     @SerializedName("login")
     private String loginName;

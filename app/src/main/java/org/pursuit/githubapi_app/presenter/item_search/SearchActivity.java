@@ -1,4 +1,4 @@
-package org.pursuit.githubapi_app;
+package org.pursuit.githubapi_app.presenter.item_search;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,11 +7,17 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.widget.Toast;
 
+import org.pursuit.githubapi_app.R;
+import org.pursuit.githubapi_app.common.GHRetrofit;
+import org.pursuit.githubapi_app.data.GithubApi;
+import org.pursuit.githubapi_app.data.model.Items;
+import org.pursuit.githubapi_app.presenter.Contract;
+
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, Contract.SearchItemsView {
+public class SearchActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, Contract.ItemsView {
 
-    private Contract.ItemPresenter presenter;
+    private Contract.ItemsPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         searchView.setOnQueryTextListener(this);
         GithubApi api = GHRetrofit.getRetrofitInstance()
                 .create(GithubApi.class);
-        presenter = new SearchPresenter( this, api);
+        presenter = new ItemsPresenter( this, api);
     }
 
     @Override
@@ -37,10 +43,10 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     }
 
     @Override
-    public void showItems(List<Item> itemList) {
+    public void showItems(List<Items> itemsList) {
         RecyclerView recyclerView = findViewById(R.id.search_recyclerView);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(new ItemAdapter(itemList));
+        recyclerView.setAdapter(new ItemsAdapter(itemsList));
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
     }
 
