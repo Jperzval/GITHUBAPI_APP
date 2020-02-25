@@ -17,6 +17,7 @@ public class ItemResponse {
         this.itemResponse = itemResponse;
     }
 
+    //No setters needed b/c its included within the retrofit converter
     public List<Item> getItemResponse() {
         return itemResponse;
     }
