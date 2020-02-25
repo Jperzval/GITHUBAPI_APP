@@ -5,6 +5,10 @@ import org.pursuit.githubapi_app.data.model.Repos;
 
 import java.util.List;
 
+/**
+ * Created for MVP architecture. View interfaces will be implemented by Activities and
+ * Presenter interfaces will be implemented for Presenter classes.
+ */
 public interface Contract {
 
     interface ItemsView {

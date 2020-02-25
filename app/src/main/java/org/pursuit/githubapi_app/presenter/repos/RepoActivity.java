@@ -16,6 +16,9 @@ import org.pursuit.githubapi_app.presenter.Contract;
 
 import java.util.List;
 
+/**
+ * Created to receive intent for each itemview's login name from ItemsViewHolder.
+ */
 public class RepoActivity extends AppCompatActivity implements Contract.RepoView {
 
     @Override
