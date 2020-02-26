@@ -25,9 +25,10 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
         setContentView(R.layout.activity_main);
         SearchView searchView = findViewById(R.id.searchView);
         searchView.setOnQueryTextListener(this);
+        searchView.clearFocus();
         GithubApi api = GHRetrofit.getRetrofitInstance()
                 .create(GithubApi.class);
-        presenter = new ItemsPresenter( this, api);
+        presenter = new ItemsPresenter(this, api);
     }
 
     @Override
@@ -51,7 +52,12 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
     }
 
     @Override
-    public void showError(){
-        Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
+    public void showError1() {
+        Toast.makeText(this, "Not Found", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void showError2() {
+        Toast.makeText(this, "Enter New Search", Toast.LENGTH_SHORT).show();
     }
 }

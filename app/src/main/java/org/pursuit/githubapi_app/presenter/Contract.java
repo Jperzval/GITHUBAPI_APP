@@ -13,7 +13,8 @@ public interface Contract {
 
     interface ItemsView {
         void showItems(List<Items> itemsList);
-        void showError();
+        void showError1();
+        void showError2();
     }
 
     interface RepoView {
