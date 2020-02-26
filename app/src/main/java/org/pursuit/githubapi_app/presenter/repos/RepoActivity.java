@@ -9,13 +9,16 @@ import android.widget.Toast;
 
 import org.pursuit.githubapi_app.presenter.item_search.ItemsViewHolder;
 import org.pursuit.githubapi_app.R;
-import org.pursuit.githubapi_app.common.GHRetrofit;
-import org.pursuit.githubapi_app.data.GithubApi;
+import org.pursuit.githubapi_app.network.GHRetrofit;
+import org.pursuit.githubapi_app.network.GithubApi;
 import org.pursuit.githubapi_app.data.model.Repos;
 import org.pursuit.githubapi_app.presenter.Contract;
 
 import java.util.List;
 
+/**
+ * Created to receive intent for each itemview's login name from ItemsViewHolder.
+ */
 public class RepoActivity extends AppCompatActivity implements Contract.RepoView {
 
     @Override

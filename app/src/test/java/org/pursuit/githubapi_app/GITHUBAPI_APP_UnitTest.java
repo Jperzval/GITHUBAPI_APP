@@ -11,6 +11,10 @@ import org.pursuit.githubapi_app.presenter.repos.RepoAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * These are local unit tests, which use the Java Virtual Machine (JVM) of your local machine.
+ * They do not use the Android framework.
+ */
 public class GITHUBAPI_APP_UnitTest {
 
     private List<Repos> actual;

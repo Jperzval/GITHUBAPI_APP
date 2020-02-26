@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">GITHUBAPI_APP</string>
-    <string name="autocomptextview_text">ENTER ORG NAME</string>
+    <string name="hint_text">Search</string>
 </resources>

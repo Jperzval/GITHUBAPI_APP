@@ -8,8 +8,8 @@ import android.support.v7.widget.SearchView;
 import android.widget.Toast;
 
 import org.pursuit.githubapi_app.R;
-import org.pursuit.githubapi_app.common.GHRetrofit;
-import org.pursuit.githubapi_app.data.GithubApi;
+import org.pursuit.githubapi_app.network.GHRetrofit;
+import org.pursuit.githubapi_app.network.GithubApi;
 import org.pursuit.githubapi_app.data.model.Items;
 import org.pursuit.githubapi_app.presenter.Contract;
 

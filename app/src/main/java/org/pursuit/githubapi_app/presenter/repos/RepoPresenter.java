@@ -2,9 +2,9 @@ package org.pursuit.githubapi_app.presenter.repos;
 
 import android.annotation.SuppressLint;
 
-import org.pursuit.githubapi_app.common.GHRetrofit;
+import org.pursuit.githubapi_app.network.GHRetrofit;
 import org.pursuit.githubapi_app.data.DataSort;
-import org.pursuit.githubapi_app.data.GithubApi;
+import org.pursuit.githubapi_app.network.GithubApi;
 import org.pursuit.githubapi_app.data.model.Repos;
 import org.pursuit.githubapi_app.presenter.Contract;
 
@@ -14,6 +14,10 @@ import java.util.List;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
+/**
+ * Created to override methods of RepoPresenter. This allows information to operate without the data and UI
+ * being held up by the other.
+ */
 public class RepoPresenter implements Contract.RepoPresenter {
 
     private final Contract.RepoView repoView;
@@ -32,11 +36,18 @@ public class RepoPresenter implements Contract.RepoPresenter {
                 .getRepos(organization)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe((List<Repos> response) -> {
-                            List<Repos> list = new ArrayList<>(response);
-                            DataSort.sortByStars(list);
-                            repoView.showRepos(list);
-                        },
+                .subscribe(this::viewResponse,
                         throwable -> repoView.showError());
+    }
+
+    private void viewResponse(List<Repos> response) {
+        List<Repos> list = new ArrayList<>(response);
+        final boolean success = !list.isEmpty();
+        if (success) {
+            DataSort.sortByStars(response);
+            repoView.showRepos(response);
+        } else {
+            repoView.showError();
+        }
     }
 }

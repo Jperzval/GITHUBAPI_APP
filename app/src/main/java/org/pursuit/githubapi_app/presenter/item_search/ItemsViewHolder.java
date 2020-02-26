@@ -5,7 +5,6 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.pursuit.githubapi_app.R;
 import org.pursuit.githubapi_app.data.model.Items;
@@ -22,13 +21,12 @@ public class ItemsViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void onBind(final Items items) {
-        itemNameView.setText(items.getLoginName());
-        itemView.setOnClickListener(v -> {
-            Toast.makeText(itemView.getContext(), "Clicked", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(itemView.getContext(), RepoActivity.class);
-            intent.putExtra(ORG_NAME, items.getLoginName());
-            v.getContext().startActivity(intent);
-        });
+           itemNameView.setText(items.getLoginName());
+           itemView.setOnClickListener(v -> {
+               Intent intent = new Intent(itemView.getContext(), RepoActivity.class);
+               intent.putExtra(ORG_NAME, items.getLoginName());
+               v.getContext().startActivity(intent);
+           });
     }
 
 }
