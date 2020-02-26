@@ -2,9 +2,9 @@ package org.pursuit.githubapi_app.presenter.item_search;
 
 import android.annotation.SuppressLint;
 
+import org.pursuit.githubapi_app.data.model.Items;
 import org.pursuit.githubapi_app.network.GHRetrofit;
 import org.pursuit.githubapi_app.network.GithubApi;
-import org.pursuit.githubapi_app.data.model.Items;
 import org.pursuit.githubapi_app.presenter.Contract;
 
 import java.util.ArrayList;
@@ -37,8 +37,7 @@ public class ItemsPresenter implements Contract.ItemsPresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe((response) -> {
                             viewResponse(response.getItemsResponse());
-                        },
-                        throwable -> itemsView.showError());
+                        }, throwable -> itemsView.showError2());
     }
 
     private void viewResponse(List<Items> response) {
@@ -46,8 +45,9 @@ public class ItemsPresenter implements Contract.ItemsPresenter {
         final boolean success = !list.isEmpty();
         if (success) {
             itemsView.showItems(response);
-        } else {
-            itemsView.showError();
+        }
+        else {
+            itemsView.showError1();
         }
     }
 }
