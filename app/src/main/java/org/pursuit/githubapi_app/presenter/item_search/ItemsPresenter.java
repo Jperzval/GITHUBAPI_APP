@@ -2,8 +2,8 @@ package org.pursuit.githubapi_app.presenter.item_search;
 
 import android.annotation.SuppressLint;
 
-import org.pursuit.githubapi_app.common.GHRetrofit;
-import org.pursuit.githubapi_app.data.GithubApi;
+import org.pursuit.githubapi_app.network.GHRetrofit;
+import org.pursuit.githubapi_app.network.GithubApi;
 import org.pursuit.githubapi_app.data.model.Items;
 import org.pursuit.githubapi_app.presenter.Contract;
 

@@ -1,4 +1,4 @@
-package org.pursuit.githubapi_app.data;
+package org.pursuit.githubapi_app.network;
 
 import org.pursuit.githubapi_app.data.model.ItemsResponse;
 import org.pursuit.githubapi_app.data.model.Repos;
